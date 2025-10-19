@@ -1,12 +1,13 @@
-// See https://aka.ms/new-console-template for more information
-using FoundationsOfFullStackFinalProject.Models;
-using FoundationsOfFullStackFinalProject.Service;
+﻿// See https://aka.ms/new-console-template for more information
+using InventoryManagementSystem.Models;
+using InventoryManagementSystem.Service;
 using System;
 class Program()
 {
     private static ProductService _service = new();
     private static void operationManeger(int operationID)
     {
+        Console.Clear();
         switch (operationID)
         {
             case 0:
@@ -35,7 +36,7 @@ class Program()
         Console.WriteLine("3-Get All");
         Console.WriteLine("4-Update");
         Console.WriteLine("5-Exit");
-        Console.WriteLine("Enter Item Number :");
+        Console.WriteLine("Enter Item Number");
         if (int.TryParse(Console.ReadLine(), out int selection))
         {
             return selection;
