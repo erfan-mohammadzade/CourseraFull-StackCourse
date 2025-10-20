@@ -89,6 +89,43 @@ class ProductService
             Console.WriteLine($"Quantity: {p.Quantity}");
         }
     }
+
+    public bool buyProduct()
+    {
+        Console.WriteLine("Enter Product Id for buy:");
+        string pId = Console.ReadLine() ?? string.Empty;
+        var found = _products.FirstOrDefault(ui => ui.Id == pId);
+        if (found == null)
+        {
+            Console.WriteLine("Product not found!");
+            return false;
+        }
+        Console.WriteLine("Enter quantity: ");
+        string qtyInput = Console.ReadLine() ?? string.Empty;
+        if (!int.TryParse(qtyInput, out int quantity) || quantity <= 0)
+        {
+            Console.WriteLine("Invalid quantity.");
+            return false;
+        }
+
+        // parse existing product quantity (stored as string in model)
+        if (!int.TryParse(found.Quantity, out int existingQty))
+        {
+            Console.WriteLine("Product quantity is invalid.");
+            return false;
+        }
+
+        if (quantity > existingQty)
+        {
+            Console.WriteLine("Not enough stock.");
+            return false;
+        }
+
+        existingQty -= quantity;
+        found.Quantity = existingQty.ToString();
+        Console.WriteLine($"Purchase successful. Remaining quantity: {found.Quantity}");
+        return true;
+    }
     public Product? GetProductById(string id) => _products.FirstOrDefault(ui=>ui.Id == id);
     
 }
