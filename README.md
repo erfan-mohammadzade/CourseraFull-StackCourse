@@ -13,10 +13,10 @@ The **Full Stack Web Development** specialization (by [Coursera](https://www.cou
 - Foundation of Coding Full-Stack.
 - ..Soon
 ## 💻 Projects in This Repository
-| Project | Description | Technologies |
-|----------|--------------|---------------|
-| **1. Inventory Management** | A console application can add remove edit products. | C#, dotnet|
-| **2. Student Grade Management** | A console application monitor student grade add remove and calculate class parameters. | C#, dotnet|
+| Project | Description | Technologies | Course Name
+|----------|--------------|---------------|---------|
+| **1. Inventory Management** | A console application can add remove edit products. | C#, dotnet| [Foundations of Coding Full-Stack](https://www.coursera.org/learn/foundations-of-coding-full-stack)|
+
 
 
 ## 🧠 Skills Gained
